@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>form login</title>
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 
@@ -20,7 +20,7 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password">
             <br>
-            <br><button type="submit" id="submit" name="submit">Login</button></br>
+            <button type="submit" id="submit" name="submit">Login</button>
             </br>
             <p>Belum Punya Akun? Silahkan Registrasi <a href="admin/registrasiadminstator.php">Ayo Registrasi</a></p>
         </div>

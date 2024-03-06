@@ -1,17 +1,22 @@
-<a href="hapusdata_siswa.php?id_siswa=<?php echo $data['nis']; ?>">Hapus</a>
 <?php
-include 'koneksi.php';
-$nis = $_GET['nis'];
-$hapus = mysqli_query($connection, "DELETE FROM siswa WHERE nis='$nis'");
-if ($hapus) {
-    echo "<script>
-                alert('Hapus data berhasil!');
-                document.location='admin_siswa.php';
-                </script>";
+require('koneksi.php');
+$id = $_GET['id'];
+
+$query_hapus = $koneksi->query("DELETE FROM siswa WHERE nis='$nis'");
+
+if ($query_hapus) {
+?>
+    <script>
+        window.alert('Data Berhasil Dihapus!!');
+        window.location.href = 'halamansiswa.php?page=siswa';
+    </script>
+<?php
 } else {
-    echo "<script>
-                alert('Hapus data gagal!');
-                document.location='admin_siswa.php';
-            </script>";
+?>
+    <script>
+        window.alert('Data Gagal Dihapus!!');
+        window.location.href = 'halamansiswa.php?page=siswa';
+    </script>
+<?php
 }
 ?>

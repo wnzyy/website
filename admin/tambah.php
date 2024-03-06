@@ -1,43 +1,132 @@
-<?php
+<html>
+<body>
+    <p><a href="halamansiswa.php">Beranda</a> / <a href="tambah.php">Tambah Data</a></p>
+    <h3>Tambah Data Siswa</h3>
+    <form action="tambah_proses.php" method="post">
+        <table cellpadding="3" cellspacing="0">
+            <tr>
+                <td>nis</td>
+                <td>:</td>
+                <td><input type="text" name="nis" required></td>
+            </tr>
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td><input type="text" name="nama" size="30" required></td>
+            </tr>
+            <tr>
+                <td>Tempat Lahir</td>
+                <td>:</td>
+                <td><input type="text" name="tempa<html>
 
-include "koneksi.php";
+<body>
+    <p><a href="halamansiswa.php">Data Siswa</a> / <a href="tambah.php">Tambah Data</a></p>
+    <h3>Tambah Data Siswa</h3>
+    <form action="tambah_proses.php" method="post">
+        <table cellpadding="3" cellspacing="0">
+            <tr>
+                <td>NIS</td>
+                <td>:</td>
+                //required artinya harus diisi dan jika belum diisi tidak akan bisa dikirim/submit
+                <td><input type="text" name="NIS" required></td>
+            </tr>
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td><input type="text" name="nama" size="30" required></td>
+            </tr>
+            <tr>
+                <td>Tempat Lahir</td>
+                <td>:</td>
+                <td><input type="text" name="tempat_lahir" size="30" required></td>
+            </tr>
+            <tr>
+                <td>tanggal lahir</td>
+                <td>:</td>
+                <td><input type="text" name="tanggal_lahir" size="30" required></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>:</td>
+                <td><input type="text" name="jenis_kelamin" size="30" required></td>
+            </tr>
+            <tr>
+                <td>Agama</td>
+                <td>:</td>
+                <td>
+                    <select name="agama" required>
+                        <option value="">Pilih Agama</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Konghucu">konghucu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td><input type="text" name="alamat" size="30" required></td>
+            </tr>
+            <tr>
+                <td>Jurusan</td>
+                <<td>:</td>
+                    <td>
+                        <select name="jurusan" required>
+                            <option value="">Pilih Jurusan</option>
+                            <option value="RPL">RPL</option>
+                            <option value="TEI">TEI</option>
+                            <option value="KA">KA</option>
+                            <option value="PBS">PBS</option>
+                        </select>
+            <tr>
+                <td><input type="submit" name="tambah" value="Tambah"></td>
+            </tr>
+        </table>
+    </form>
+</body>
 
-if (isset($_POST['simpan'])) {
+</html>t_lahir" size="30" required></td>
+            </tr>
+            <tr>
+                <td>tanggal lahir</td>
+                <td>:</td>
+                <td><input type="text" name="tanggal_lahir" size="30" required></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>:</td>
+                <td><input type="text" name="jenis_kelamin" size="30" required></td>
+            </tr>
+            <tr>
+                <td>Agama</td>
+                <td>:</td>
+                <td>
+                    <select name="agama" required>
+                        <option value="">Pilih Agama</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Konghucu">konghucu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td><input type="text" name="alamat" size="30" required></td>
+            </tr>
+            <tr>
+                <td>Jurusan</td>
+                <td>:</td>
+                <td><input type="text" name="jurusan" size="30" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="tambah" value="Tambah"></td>
+            </tr>
+        </table>
+    </form>
+</body>
 
-    $simpan = mysqli_query($connection, "INSERT INTO siswa(nis, nama, tempat_lahir, tgl_lahir,jenis_kelamin, agama, alamat)
-                                        VALUES ('$_POST[nis]',
-                                                '$_POST[nama]',
-                                                '$_POST[tempat_lahir]',
-                                                '$_POST[tgl_lahir]',
-                                                '$_POST[jenis_kelamin]',
-                                                '$_POST[agama]',
-                                                '$_POST[alamat]') ");
-    if ($simpan) {
-        echo "<script>
-                    alert('Simpan data berhasil!');
-                    document.location='admin_siswa.php';
-                    </script>";
-    } else {
-        echo "<script>
-                    alert('Simpan data gagal!');
-                    document.location='admin_siswa.php';
-                </script>";
-    }
-}
-
-if (isset($_POST['bedit'])) {
-
-    $edit = mysqli_query($connection, "UPDATE siswa SET nis = '$_POST[nis]', nama = '$_POST[nama]', tempat_lahir = '$_POST[tempat_lahir]', tanggal_lahir = '$_POST[tgl_lahir]', jenis_kelamin = '$_POST[jenis_kelamin]', agama = '$_POST[agama]', alamat = '$_POST[alamat] 
-    WHERE nis = '$_POST[nis]'");
-    if ($edit) {
-        echo "<script>
-                    alert('Edit data berhasil!');
-                    document.location='admin_siswa.php';
-                    </script>";
-    } else {
-        echo "<script>
-                    alert('Edit data gagal!');
-                    document.location='admin_siswa.php';
-                </script>";
-    }
-}
+</html>

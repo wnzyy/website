@@ -1,5 +1,5 @@
 <?php 
-$koneksi = mysqli_connect("localhost","root","","user_level");
+$koneksi = mysqli_connect("localhost","root","","informasisekolah");
  
 // Check connection
 if (mysqli_connect_errno()){

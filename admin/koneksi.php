@@ -1,8 +1,8 @@
-<?php
-
-$server = "localhost";
-$user = "root";
-$password = "";
-$database = "informasisekolah";
-
-$connection = mysqli_connect() or die(mysqli_error($connection));
+<?php 
+$koneksi = mysqli_connect("localhost","root","","informasisekolah");
+ 
+if (mysqli_connect_errno()){
+ echo "Koneksi database gagal : " . mysqli_connect_error();
+}
+ 
+?>
